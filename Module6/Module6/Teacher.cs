@@ -8,151 +8,37 @@ using System;
 
 namespace Module6
 {
-    class Teacher
+    class Teacher : Person
     {
-        //properties
-        private string _firstName;
-        private string _lastName;
-        private DateTime _birthDate;
-        private string _addressLine1;
-        private string _addressLine2;
-        private string _city;
-        private string _stateProvince;
-        private string _zipPostal;
-        private string _country;
+        private string _mainSubject;
         public static int teacherCnt = 0;
-        public string FirstName
+
+        public string MainSubject
         {
             get
             {
-                return _firstName;
+                return _mainSubject;
             }
 
             set
             {
-                _firstName = value;
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return _lastName;
-            }
-
-            set
-            {
-                _lastName = value;
-            }
-        }
-
-        public DateTime BirthDate
-        {
-            get
-            {
-                return _birthDate;
-            }
-
-            set
-            {
-                _birthDate = value;
-            }
-        }
-
-        public string AddressLine1
-        {
-            get
-            {
-                return _addressLine1;
-            }
-
-            set
-            {
-                _addressLine1 = value;
-            }
-        }
-
-        public string AddressLine2
-        {
-            get
-            {
-                return _addressLine2;
-            }
-
-            set
-            {
-                _addressLine2 = value;
-            }
-        }
-
-        public string City
-        {
-            get
-            {
-                return _city;
-            }
-
-            set
-            {
-                _city = value;
-            }
-        }
-
-        public string StateProvince
-        {
-            get
-            {
-                return _stateProvince;
-            }
-
-            set
-            {
-                _stateProvince = value;
-            }
-        }
-
-        public string ZipPostal
-        {
-            get
-            {
-                return _zipPostal;
-            }
-
-            set
-            {
-                _zipPostal = value;
-            }
-        }
-
-        public string Country
-        {
-            get
-            {
-                return _country;
-            }
-
-            set
-            {
-                _country = value;
+                _mainSubject = value;
             }
         }
 
         public Teacher(string first, string last, DateTime dob, string address1,
-            string address2, string ciy, string stte, string zip, string country)
+            string address2, string ciy, string stte, string zip, string country, string m) :
+                base(first, last, dob, address1, address2, ciy, stte, zip, country)
         {
 
-            this.FirstName = first;
-            this.LastName = last;
-            this.BirthDate = dob;
-            this.AddressLine1 = address1;
-            this.AddressLine2 = address2;
-            this.City = ciy;
-            this.StateProvince = stte;
-            this.ZipPostal = zip;
-            this.Country = country;
+            this.MainSubject = m;
             teacherCnt++; //add one each time a new teacher is created
 
+        }
+        public void gradeTest()
+        {
+            Console.WriteLine("{0} {1}; the {2} teacher is grading a test",
+                this.FirstName, this.LastName, this.MainSubject);
         }
     }
 }

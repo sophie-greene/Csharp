@@ -2,7 +2,7 @@
 ** More OOP
 ** @author: Sophie M Greene
 ** @date: 27/11/2015
-** class Student
+** class Person
 ****************************************/
 using System;
 
@@ -150,8 +150,6 @@ namespace Module6
             this.StateProvince = stte;
             this.ZipPostal = zip;
             this.Country = country;
-           
-
         }
     }
 }

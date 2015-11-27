@@ -35,5 +35,10 @@ namespace Module6
             studentCnt++;//add one each time a new student is created
 
         }
+        public void takeTest()
+        {
+            Console.WriteLine("{0} {1} who has a {2:0.00} GPA; is taking a test",
+                this.FirstName,this.LastName,this.Gpa);
+        }
     }
 }

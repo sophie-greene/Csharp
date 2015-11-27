@@ -31,9 +31,9 @@ namespace Module6
             //Instantiate at least one Teacher object.
             Teacher[] tchArr = new Teacher[2];
             tchArr[0] = new Teacher("Manual", "Zu", new DateTime(1970, 1, 1), "30 Other Street",
-                        "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK");
+                        "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK","Computing");
             tchArr[1] = new Teacher("Handy", "Man", new DateTime(1930, 10, 1), "30 Other Street",
-                       "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK");
+                       "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK","Mathmatics");
 
             //Add that Teacher object to your Course object
             courses[0].Teacher = tchArr;
@@ -60,6 +60,14 @@ namespace Module6
             Console.WriteLine("The {0} degree contains the course {1}", prog.Degrees[0].Name, prog.Degrees[0].Courses[0].Name);
             Console.WriteLine();
             Console.WriteLine("The {0} course contains {1} student(s) ", prog.Degrees[0].Courses[0].Name, Student.studentCnt);
+            Console.WriteLine();
+            prog.Degrees[0].Courses[0].Students[0].takeTest();
+            Console.WriteLine();
+            prog.Degrees[0].Courses[0].Teacher[1].gradeTest();
+            Console.WriteLine();
+            prog.Degrees[0].Courses[0].Students[1].takeTest();
+            Console.WriteLine();
+            prog.Degrees[0].Courses[0].Teacher[0].gradeTest();
             Console.WriteLine();
 
             #region keep console window open
