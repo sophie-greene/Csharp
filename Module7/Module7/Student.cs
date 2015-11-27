@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace Module7
 {
-    class Student:Person
+    class Student :Person
     {
 
         private double _gpa;
@@ -58,6 +58,9 @@ namespace Module7
                 return sum / cnt;
             else
                 return 0;
+        }
+        int IComparable<Student>.CompareTo(Student other) {
+            return FirstName.CompareTo(other.FirstName);
         }
     }
 }

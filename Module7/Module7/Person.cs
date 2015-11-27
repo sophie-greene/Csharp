@@ -9,7 +9,7 @@ using System;
 
 namespace Module7
 {
-    class Person
+    class Person:IComparable<Person>
     {
         //properties
         private string _firstName;
@@ -90,6 +90,9 @@ namespace Module7
             this.StateProvince = stte;
             this.ZipPostal = zip;
             this.Country = country;
+        }
+        int IComparable<Person>.CompareTo(Person other) {
+            return FirstName.CompareTo(other.FirstName);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Module7
 
             //Add the three Student objects to the Students ArrayList inside the Course object
             courses[0].Students = stArr;
-
+            courses[0].Students.Sort();
             //Instantiate at least one Teacher object.
             Teacher[] tchArr = new Teacher[2];
             tchArr[0] = new Teacher("Manual", "Zu", new DateTime(1970, 1, 1), "30 Other Street",

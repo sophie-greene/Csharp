@@ -41,7 +41,8 @@ namespace Module7SF
 
             //Add the three Student objects to the Students ArrayList inside the Course object
             courses[0].Students = stArr;
-
+            
+            
             //Instantiate at least one Teacher object.
             Teacher[] tchArr = new Teacher[2];
             tchArr[0] = new Teacher("Manual", "Zu", new DateTime(1970, 1, 1), "30 Other Street",
@@ -81,6 +82,11 @@ namespace Module7SF
             //Call the ListStudents() method from Main().
             courses[0].ListStudents();
 
+            //sort students
+            sortArr(courses[0].Students);
+            //show students
+            courses[0].ListStudents();
+
             //using casting
             Student stt = (Student)prog.Degrees[0].Courses[0].Students[2];
             Console.WriteLine("using casting");
@@ -97,6 +103,29 @@ namespace Module7SF
 
 
         }
+        static void sortArr(ArrayList a) {
+          
+            int N = a.Count;
+            
+            for (int i = 0; i < N; i++) {
+
+                for (int j = i; j > 0 && less((Student)a[j], (Student)a[j - 1]); j--) {
+                    exch(a, j, j - 1);
+                   
+                }
+        }
+        }
+
+        private static void exch(ArrayList a, int i, int j) {
+            Object swap = a[i];
+            a[i] = a[j];
+            a[j] = swap;
+        }
+
+        private static bool less(Student v1, Student v2) {
+           return  v1.FirstName.CompareTo(v2.FirstName)< 0;
+        }
+        
     }
     #endregion
 
@@ -242,7 +271,7 @@ namespace Module7SF
 #endregion
 
     #region Person class
-    class Person
+    class Person: IComparable<Person>
     {
         //properties
         private string _firstName;
@@ -313,6 +342,9 @@ namespace Module7SF
             this.StateProvince = stte;
             this.ZipPostal = zip;
             this.Country = country;
+        }
+        int IComparable<Person>.CompareTo(Person other) {
+            return FirstName.CompareTo(other.FirstName);
         }
     }
     #endregion
