@@ -27,19 +27,19 @@ namespace Module8
             /*Grading criterion 3- Added 3 Student objects to this
             List<T> using the List<T> method for adding objects.*/
             prog.Degrees[0].Courses[0].Students.Add(new Student
-                        ("Sophie", "Greene", new DateTime(1982, 12, 1),
-                       "30 Some Street", "", "Leeds", "West Yorkshire", "ZE7 3AE", "UK", 4.0));
+            ("Sophie", "Greene", new DateTime(1982, 12, 1),
+            "30 Some Street", "", "Leeds", "West Yorkshire", "ZE7 3AE", "UK", 4.0));
             prog.Degrees[0].Courses[0].Students.Add(new Student
-                ("Mandy", "Newton", new DateTime(1985, 11, 12),
-                       "30 Some Street", "", "Leeds", "West Yorkshire", "ZE7 3AE", "UK", 3.4));
+            ("Mandy", "Newton", new DateTime(1985, 11, 12),
+            "30 Some Street", "", "Leeds", "West Yorkshire", "ZE7 3AE", "UK", 3.4));
             prog.Degrees[0].Courses[0].Students.Add(new Student
-                ("Sonia", "Cry", new DateTime(1952, 1, 12),
-                         "30 Some Street", "", "Leeds", "West Yorkshire", "ZE7 3AE", "UK", 2.7));
+            ("Sophie", "Cry", new DateTime(1952, 1, 12),
+            "30 Some Street", "", "Leeds", "West Yorkshire", "ZE7 3AE", "UK", 2.7));
 
             double[,] grds = new double[,]
-                                        { { 90, 30, 89, 90, 60 },
-                                          { 20, 50, 80, 70, 60 },
-                                          { 91, 92, 89, 77, 98 } };
+            { { 90, 30, 89, 90, 60 },
+{ 20, 50, 80, 70, 60 },
+{ 91, 92, 89, 77, 98 } };
 
             //Add 5 grades to the the Stack in the each Student object.
             //(this does not have to be inside the constructor because 
@@ -52,36 +52,36 @@ namespace Module8
             }
             //Instantiate at least one Teacher object.
             prog.Degrees[0].Courses[0].Teachers.Add(new Teacher
-                ("Manual", "Zu", new DateTime(1970, 1, 1), "30 Other Street",
-                        "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK", "Computing"));
+            ("Manual", "Zu", new DateTime(1970, 1, 1), "30 Other Street",
+            "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK", "Computing"));
             prog.Degrees[0].Courses[0].Teachers.Add(new Teacher
-                ("Handy", "Man", new DateTime(1930, 10, 1), "30 Other Street",
-                       "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK", "Mathmatics"));
-            
+            ("Handy", "Man", new DateTime(1930, 10, 1), "30 Other Street",
+            "", "Sheffield", "West Yorkshire", "LE7 9MN", "UK", "Mathmatics"));
+
             //results output
             int input = 0;
             //exists only of input is 6
-            while(input!=6) { 
-            bool isVal = false;
-            do {
-                welMessage();
-                isVal= int.TryParse(Console.ReadLine(),out input);
-            } while(!isVal);
-            switch (input) {
-                case 1:
+            while (input != 6) {
+                bool isVal = false;
+                do {
+                    welMessage();
+                    isVal = int.TryParse(Console.ReadLine(), out input);
+                } while (!isVal);
+                switch (input) {
+                    case 1:
                         Console.Clear();
-                    /*Grading criterion 4- Used a foreach loop to output 
-                    the first and last name of each Student in the List<T>.*/
-                    Console.WriteLine("Printing Student List");
-                    int cnt = 1;
-                    foreach (Student s in prog.Degrees[0].Courses[0].Students) {
-                        Console.WriteLine("{0}-{1} {2}", cnt,
-                        s.FirstName, s.LastName);
-                        cnt++;
-                    }
-                    Console.WriteLine();
-                    break;
-                case 2:
+                        /*Grading criterion 4- Used a foreach loop to output 
+                        the first and last name of each Student in the List<T>.*/
+                        Console.WriteLine("Printing Student List");
+                        int cnt = 1;
+                        foreach (Student s in prog.Degrees[0].Courses[0].Students) {
+                            Console.WriteLine("{0}-{1} {2}", cnt,
+                            s.FirstName, s.LastName);
+                            cnt++;
+                        }
+                        Console.WriteLine();
+                        break;
+                    case 2:
                         Console.Clear();
                         Console.WriteLine("Before Sort >>>>");
                         prog.Degrees[0].Courses[0].ListStudents();
@@ -91,29 +91,29 @@ namespace Module8
                         //show students
                         prog.Degrees[0].Courses[0].ListStudents();
 
-                    break;
-                case 3:
+                        break;
+                    case 3:
                         //Call the ListStudents() method from Main().
                         Console.Clear();
                         prog.Degrees[0].Courses[0].ListStudents();
-                    break;
-                case 4:
+                        break;
+                    case 4:
                         Console.Clear();
                         Console.WriteLine("Before Grade Change >>>>");
                         //show students
                         prog.Degrees[0].Courses[0].ListStudents();
                         //remove last grade 
-                        double g= prog.Degrees[0].Courses[0].Students[1].Grades.Pop();
+                        double g = prog.Degrees[0].Courses[0].Students[1].Grades.Pop();
                         Console.WriteLine("Grade {0} was updated to 99 for student {1} {2}",
-                            g, prog.Degrees[0].Courses[0].Students[1].FirstName,
-                            prog.Degrees[0].Courses[0].Students[1].LastName);
+                        g, prog.Degrees[0].Courses[0].Students[1].FirstName,
+                        prog.Degrees[0].Courses[0].Students[1].LastName);
                         //add new grade
                         prog.Degrees[0].Courses[0].Students[1].Grades.Push(99);
                         Console.WriteLine("After Grade Change >>>>");
                         //show students
                         prog.Degrees[0].Courses[0].ListStudents();
                         break;
-                case 5:
+                    case 5:
                         Console.Clear();
                         Console.WriteLine("Before Grade Sort >>>>");
                         //show students
@@ -122,37 +122,39 @@ namespace Module8
                         Console.WriteLine("AfterGrade Sort >>>>");
                         //Call the ListStudentsSortedGrds() method from Main().
                         prog.Degrees[0].Courses[0].ListStudentsSortedGrds();
-                    break;
-                
-                default:
+                        break;
 
-                    break;
-            }
-            #region clear console
-            Console.Write("Press Any Key to Continue");
-            Console.ReadKey();
-            Console.Clear();
-            #endregion
+                    default:
+
+                        break;
+                }
+                #region clear console
+                Console.Write("Press Any Key to Continue");
+                Console.ReadKey();
+                Console.Clear();
+                #endregion
             }
 
-#region keep console window open
+            #region keep console window open
             Console.Write("Press Any Key to Continue");
             Console.ReadKey();
             Console.Clear();
             #endregion
 
         }
+   
         static void sortArr(List<Student> a) {
+            //possible because Student parent class "Person" implements IComparable
+            a.Sort();
+            //int n = a.Count;
 
-            int N = a.Count;
+            //for (int i = 0; i < n; i++) {
 
-            for (int i = 0; i < N; i++) {
+            //    for (int j = i; j > 0 && a[i]< a[j - 1]; j--) {
+            //        exch(a, j, j - 1);
 
-                for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
-                    exch(a, j, j - 1);
-
-                }
-            }
+            //    }
+            //}
         }
 
         private static void exch(List<Student> a, int i, int j) {
@@ -161,9 +163,6 @@ namespace Module8
             a[j] = swap;
         }
 
-        private static bool less(Student v1, Student v2) {
-            return v1.FirstName.CompareTo(v2.FirstName) < 0;
-        }
         private static void welMessage() {
             Console.WriteLine("Please choose one of the following numerical options followed by the return key");
             Console.WriteLine("1. Display Student List");
@@ -252,7 +251,7 @@ namespace Module8
                 s.FirstName, s.LastName);
                 s.sortGrades();
                 Console.Write("Grades: ");
-                foreach (double g in s.Grades ){
+                foreach (double g in s.Grades) {
                     Console.Write("{0},", g);
                 }
                 Console.WriteLine("Average {0:0.00}%", s.averageGrade());
@@ -264,8 +263,8 @@ namespace Module8
     }
     #endregion
 
-    #region Student class  
-    class Student : Person
+    #region Student class 
+    class Student : Person,IComparable<Student>
     {
 
         private double _gpa;
@@ -273,8 +272,6 @@ namespace Module8
         /*Grading criterion 2-Added a Stack<T> of the proper data type,
         called Grades, inside the Student object.*/
         private Stack<double> _grades;
-
-        
 
         public static int studentCnt = 0;
 
@@ -289,37 +286,36 @@ namespace Module8
             set { _grades = value; }
         }
 
-       
+
         #endregion
 
         public Student(string first, string last, DateTime dob, string address1,
-            string address2, string ciy, string stte, string zip, string country, double gpa) :
-            base(first, last, dob, address1, address2, ciy, stte, zip, country)//call parent constructor
+        string address2, string ciy, string stte, string zip, string country, double gpa) :
+        base(first, last, dob, address1, address2, ciy, stte, zip, country)//call parent constructor
         {
             this.Gpa = gpa;
             //initialise grade stack
             this.Grades = new Stack<double>();
-            
 
             studentCnt++;//add one each time a new student is created
 
         }
         public void takeTest() {
             Console.WriteLine("Student {0} {1} who has a {2:0.00} GPA and an average grade {3:0.00}%; is taking a test",
-                this.FirstName, this.LastName, this.Gpa, this.averageGrade());
+            this.FirstName, this.LastName, this.Gpa, this.averageGrade());
         }
         public void sortGrades() {
             /*challenge: find a Generic collection to store grades in a sorted order.*/
 
-            
+
             List<double> sar = new List<double>(this.Grades);
             sar.Sort();
-            this.Grades=new Stack<double>(sar);
+            this.Grades = new Stack<double>(sar);
         }
         public void displaySorted() {
             sortGrades();
             Console.WriteLine("Student {0} {1} who has a {2:0.00} GPA and an average grade {3:0.00}%; is taking a test",
-                this.FirstName, this.LastName, this.Gpa, this.averageGrade());
+            this.FirstName, this.LastName, this.Gpa, this.averageGrade());
         }
         public double averageGrade() {
             double sum = 0;
@@ -333,6 +329,23 @@ namespace Module8
             else
                 return 0;
         }
+     int IComparable<Student>.CompareTo(Student other) {
+            if (this.FirstName.CompareTo(other.FirstName) == 0)
+                return this.LastName.CompareTo(other.LastName);
+            return this.FirstName.CompareTo(other.FirstName);
+        }
+ 
+        public static bool operator <(Student c1, Student c2) {
+            if (c1.FirstName.CompareTo(c2.FirstName) == 0)
+                return c1.LastName.CompareTo(c2.LastName) < 0;
+            return c1.FirstName.CompareTo(c2.FirstName)<0; 
+        }
+        public static bool operator >(Student c1, Student c2) {
+            if (c1.FirstName.CompareTo(c2.FirstName) == 0)
+                return c1.LastName.CompareTo(c2.LastName) > 0;
+            return c1.FirstName.CompareTo(c2.FirstName) > 0; 
+        }
+    
     }
     #endregion
 
@@ -350,8 +363,8 @@ namespace Module8
         #endregion
 
         public Teacher(string first, string last, DateTime dob, string address1,
-            string address2, string ciy, string stte, string zip, string country, string m) :
-                base(first, last, dob, address1, address2, ciy, stte, zip, country) {
+        string address2, string ciy, string stte, string zip, string country, string m) :
+        base(first, last, dob, address1, address2, ciy, stte, zip, country) {
 
             this.MainSubject = m;
             teacherCnt++; //add one each time a new teacher is created
@@ -359,7 +372,7 @@ namespace Module8
         }
         public void gradeTest() {
             Console.WriteLine("{0} {1}; the {2} teacher is grading a test",
-                this.FirstName, this.LastName, this.MainSubject);
+            this.FirstName, this.LastName, this.MainSubject);
         }
     }
     #endregion
@@ -426,7 +439,7 @@ namespace Module8
         #endregion
 
         public Person(string first, string last, DateTime dob, string address1,
-          string address2, string ciy, string stte, string zip, string country) {
+        string address2, string ciy, string stte, string zip, string country) {
             this.FirstName = first;
             this.LastName = last;
             this.BirthDate = dob;
@@ -438,6 +451,8 @@ namespace Module8
             this.Country = country;
         }
         int IComparable<Person>.CompareTo(Person other) {
+            if (this.FirstName.CompareTo(other.FirstName) == 0)
+                return this.LastName.CompareTo(other.LastName);
             return FirstName.CompareTo(other.FirstName);
         }
     }
@@ -508,5 +523,4 @@ namespace Module8
         }
     }
     #endregion
-
 }
